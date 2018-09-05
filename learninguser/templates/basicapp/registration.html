@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<title>Registration page</title>
+{% extends "basicapp/base.html" %}
+	{% block content%}
+	<div class="jumbotron">
+		{% if registered %}
+			<h1>Thankyou for registering!</h1>
+		{% else %}
+			<h1>Welcome registration Page!!</h1>
+			<h3>Fill out the form:</h3>
+			<form method="POST" enctype="multipart/form-data">
+				{{ user_form.as_p }}
+				{{ profile_form.as_p }}
+				{% csrf_token %}
+				<input class="btn btn-primary" type="submit" name="" value="Register">
+			</form>
+		{% endif %}
+		
+	</div>
+
+	{% endblock %}
+

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<title>login page</title>
+{% extends "basicapp/base.html" %}
+{% block content%}
+<div class="container">
+	<h1>Please login to enter!!</h1>
+	<form action="{% url 'basicapp:user_login' %}" method="POST">
+		<label for="username">Username:</label>
+		<input type="text" name="username" placeholder="enter a username">
+
+		<label for="password">Password:</label>
+		<input type="password" name="password">
+
+		{% csrf_token %}
+		<input class="btn btn-primary" type="submit" name="" value="Sign In">
+	</form>
+	
+</div>
+
+{% endblock %}
