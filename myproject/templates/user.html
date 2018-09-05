@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% load staticfiles%}
+<html>
+<head>
+	<title>user list</title>
+	<link rel="stylesheet" type="text/css" href="{% static "css/mystyle.css" %}">
+</head>
+<body>
+	<h2>Here are your users:</h2>
+	<a href="{% url 'myapp:home' %}"> LINK TO HOME</a>
+    <div class="djangoone">
+    	<ol>
+    	{% for acc in name_details %}
+			<li>User Info </li>
+			<ul>
+				<li>{{ acc.first_name }}</li>
+				<li>{{ acc.last_name }}</li>
+				<li>{{ acc.email }}</li>
+			</ul>
+
+		{% endfor %}
+		</ol>
+    </div>
+				
+</body>
+</html>
